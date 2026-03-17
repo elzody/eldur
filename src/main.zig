@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: AGPL-3.0
+
 const std = @import("std");
 
 const gtk = @cImport({
