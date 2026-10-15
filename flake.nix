@@ -14,6 +14,7 @@
             python
             pkgs.uv
             pkgs.gtk4
+	    pkgs.gobject-introspection
           ];
 
           # Keep uv from downloading its own CPython: that interpreter runs
