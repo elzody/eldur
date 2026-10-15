@@ -4,15 +4,23 @@
   outputs = { nixpkgs, ... }:
     let
       system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.${system};
+      python = pkgs.python3;
     in
     {
       devShells.${system}.default =
-        nixpkgs.legacyPackages.${system}.mkShell {
-          packages = with nixpkgs.legacyPackages.${system}; [
-            uv
-            pkg-config
-            gtk4
+        pkgs.mkShell {
+          packages = [
+            python
+            pkgs.uv
+            pkgs.pkg-config
+            pkgs.gtk4
           ];
+
+          # Keep uv from downloading its own CPython: that interpreter runs
+          # under nix-ld's older glibc and can't load the GTK libs below.
+          env.UV_PYTHON = "${python}/bin/python3";
+          env.UV_PYTHON_DOWNLOADS = "never";
         };
     };
 }
