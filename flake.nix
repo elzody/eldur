@@ -13,7 +13,6 @@
           packages = [
             python
             pkgs.uv
-            pkgs.pkg-config
             pkgs.gtk4
           ];
 
