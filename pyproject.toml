@@ -5,7 +5,7 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [
-    "gi[gtk]>=0.8.1",
+    "pygobject>=3.58.1",
 ]
 
 [dependency-groups]

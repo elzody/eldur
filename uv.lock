@@ -7,7 +7,7 @@ name = "eldur"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
-    { name = "gi", extra = ["gtk"] },
+    { name = "pygobject" },
 ]
 
 [package.dev-dependencies]
@@ -16,60 +16,10 @@ dev = [
 ]
 
 [package.metadata]
-requires-dist = [{ name = "gi", extras = ["gtk"], specifier = ">=0.8.1" }]
+requires-dist = [{ name = "pygobject", specifier = ">=3.58.1" }]
 
 [package.metadata.requires-dev]
 dev = [{ name = "ruff", specifier = ">=0.17.0" }]
-
-[[package]]
-name = "gi"
-version = "0.8.1"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "ginext-core" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/2e/f4/31b0e42e4622b5385f56eb9835318e0913b23bcc8a5b1993e2faf38ef3d4/gi-0.8.1.tar.gz", hash = "sha256:0d2d5038c45c686608e6776fbea0992bc98026878d8a490cd4c72d8c6c6c0ff2", size = 2024, upload-time = "2026-06-06T22:23:16.269Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/5a/b0/42c83a18c5db62bf875a2d0b900787c493aad6c3827c3d1eeb45aca8de85/gi-0.8.1-py3-none-any.whl", hash = "sha256:dcee93d544921509f93408195fb5353954fa81d548dc6053c3aa9a6f8a9871a3", size = 1380, upload-time = "2026-06-06T22:23:08.176Z" },
-]
-
-[package.optional-dependencies]
-gtk = [
-    { name = "ginext-core" },
-    { name = "ginext-gtk" },
-]
-
-[[package]]
-name = "ginext-core"
-version = "0.8.1"
-source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/84/5a/c3015acd42519f24b4fcbf844204bdbde3748d5cf02b6248cbdf74e4e1af/ginext_core-0.8.1.tar.gz", hash = "sha256:69fc76ca6879f1d37178da3443753c251844e77c99aabf095d2aed2b7bd63a78", size = 1746576, upload-time = "2026-06-06T22:23:17.058Z" }
-
-[[package]]
-name = "ginext-gio"
-version = "0.8.1"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "ginext-core" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/1e/cd/c80f51e714457b0f31ff44698615fdd133e87ee777815e278e76750fd46c/ginext_gio-0.8.1.tar.gz", hash = "sha256:7f427e2d75d45b7cb29a05bd0cba807392cc7ffbfbbe551d7f55932ee1603f1e", size = 36698, upload-time = "2026-06-06T22:23:19.629Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/a7/3c/0f5659fe851edc9f56e37d496b9641d3e537c6db9e16daa0fb2047152e46/ginext_gio-0.8.1-py3-none-any.whl", hash = "sha256:18e78ef3d5418dc805035697c4375dd58244a041ba150bc0a220299dc16b41a9", size = 9683, upload-time = "2026-06-06T22:23:10.587Z" },
-]
-
-[[package]]
-name = "ginext-gtk"
-version = "0.8.1"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "ginext-core" },
-    { name = "ginext-gio" },
-    { name = "pycairo" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/3c/7c/fe97e5a4df4e916bdf78a43332a88e06827df6185c74d09642ac5f194b96/ginext_gtk-0.8.1.tar.gz", hash = "sha256:c5ab7f73f2bbdb1c3aff6d8e119a08c927d5208cf7f7f2c2b29d0da63019798b", size = 53617, upload-time = "2026-06-06T22:23:21.103Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/aa/9e/82ae70801816c91151d38b63441c1b7bcd22d1e71aeb3fd59e1ff037cd93/ginext_gtk-0.8.1-py3-none-any.whl", hash = "sha256:35a8f13896a2b2731b33adab7083a3305e615d54f617afda2613dc758e27db08", size = 28264, upload-time = "2026-06-06T22:23:12.428Z" },
-]
 
 [[package]]
 name = "pycairo"
@@ -87,6 +37,15 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/a9/db/fb0d756cc1966a3e5f3c903f14136690d567983a571d1864e6e7ca1f8c21/pycairo-1.29.2-cp315-cp315t-win_amd64.whl", hash = "sha256:88cbf5632be0b9255822b457d3bfe4f9eb0bc24e5520f54b6c4334e4f5b0f5aa", size = 875248, upload-time = "2026-10-04T19:11:50.36Z" },
     { url = "https://files.pythonhosted.org/packages/0f/ec/3c2700abac22e3ea70c67cb27caa6c2960372ebb7361127328471a39fa7f/pycairo-1.29.2-cp315-cp315t-win_arm64.whl", hash = "sha256:0e49de5b93fc1e76e670f368b9bd0ffc881c72f506e4293c4b4d79f52cbe4c47", size = 721983, upload-time = "2026-10-04T19:11:51.895Z" },
 ]
+
+[[package]]
+name = "pygobject"
+version = "3.58.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "pycairo" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/65/1e/d590f82e14db75945b03f6b63e0f19662e0340babd8f574fdb1bb5a015e2/pygobject-3.58.1.tar.gz", hash = "sha256:4c80598ade17fbaa7798e01a25d0bf29ce109740786026a074c5c62bb3e79d23", size = 1408671, upload-time = "2026-10-09T11:29:48.929Z" }
 
 [[package]]
 name = "ruff"
