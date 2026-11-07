@@ -1,0 +1,14 @@
+<schemalist>
+    <schema id="dev.elzody.Eldur" path="/dev/elzody/Eldur/">
+
+	<key name="valheim-directory" type="s">
+	    <default>""</default>
+	    <summary>Valheim directory</summary>
+
+	    <description>
+		The directory where Valheim is installed.
+	    </description>
+	</key>
+
+    </schema>
+</schemalist>
