@@ -1,1 +1,3 @@
 .direnv/
+
+src/__pycache__
