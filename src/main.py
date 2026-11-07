@@ -2,13 +2,15 @@ import gi
 
 gi.require_version("Gtk", "4.0")
 
-from gi.repository import GLib, Gtk
+from gi.repository import Gio, GLib, Gtk
 
 
 class Eldur(Gtk.Application):
     def __init__(self):
         super().__init__(application_id="dev.elzody.eldur")
         GLib.set_application_name("Eldur")
+
+        self.settings = Gio.Settings(schema_id="dev.elzody.Eldur")
 
     def do_activate(self):
         window = Gtk.ApplicationWindow(application=self, title="Eldur")
