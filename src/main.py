@@ -7,7 +7,7 @@ from gi.repository import Gio, GLib, Gtk
 
 class Eldur(Gtk.Application):
     def __init__(self):
-        super().__init__(application_id="dev.elzody.eldur")
+        super().__init__(application_id="dev.elzody.Eldur")
         GLib.set_application_name("Eldur")
 
         self.settings = Gio.Settings(schema_id="dev.elzody.Eldur")
