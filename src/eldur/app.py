@@ -30,7 +30,3 @@ def main():
     app = Eldur()
 
     app.run()
-
-
-if __name__ == "__main__":
-    main()
