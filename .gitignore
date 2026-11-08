@@ -1,4 +1,4 @@
 .direnv/
 
+__pycache__/
 data/gschemas.compiled
-src/__pycache__
