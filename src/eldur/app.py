@@ -3,6 +3,7 @@ import gi
 gi.require_version("Gtk", "4.0")
 
 from gi.repository import Gio, GLib, Gtk
+from eldur import MainWindow
 
 
 class Eldur(Gtk.Application):
@@ -13,7 +14,7 @@ class Eldur(Gtk.Application):
         self.settings = Gio.Settings(schema_id="dev.elzody.Eldur")
 
     def do_activate(self):
-        window = Gtk.ApplicationWindow(application=self, title="Eldur")
+        window = MainWindow(application=self)
 
         self.settings.bind(
             "window-width", window, "default-width", Gio.SettingsBindFlags.DEFAULT
