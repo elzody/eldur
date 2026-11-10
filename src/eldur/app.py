@@ -1,5 +1,6 @@
 from gi.repository import Gio, GLib, Gtk
-from eldur import MainWindow
+
+from eldur.widgets import MainWindow
 
 
 class Eldur(Gtk.Application):
