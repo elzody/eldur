@@ -1,7 +1,7 @@
 from gi.repository import Gtk
 
-from eldur.widgets.play_button import PlayButton
 from eldur.widgets.menu_button import MenuButton
+from eldur.widgets.play_button import PlayButton
 
 
 class HeaderBar(Gtk.HeaderBar):
