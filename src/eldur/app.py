@@ -12,15 +12,6 @@ class Eldur(Gtk.Application):
 
     def do_activate(self):
         window = MainWindow(application=self)
-
-        self.settings.bind(
-            "window-width", window, "default-width", Gio.SettingsBindFlags.DEFAULT
-        )
-
-        self.settings.bind(
-            "window-height", window, "default-height", Gio.SettingsBindFlags.DEFAULT
-        )
-
         window.present()
 
 
