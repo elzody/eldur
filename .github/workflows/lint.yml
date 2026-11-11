@@ -1,13 +1,19 @@
-name: lint
+name: Lint
 
 on: [pull_request]
 
 jobs:
-  lint:
+  python:
+    name: Python
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
-      - uses: cachix/install-nix-action@v31
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Install Nix
+        uses: cachix/install-nix-action@v31
         with:
           github_access_token: ${{ secrets.GITHUB_TOKEN }}
-      - run: nix develop --command uv run ruff check
+
+      - name: Ruff lint check
+        run: nix develop -c uv run ruff check
