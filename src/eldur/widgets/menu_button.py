@@ -1,5 +1,6 @@
 from gi.repository import Gtk
 
+
 class MenuButton(Gtk.MenuButton):
     def __init__(self):
         super().__init__()
