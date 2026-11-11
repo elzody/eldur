@@ -10,6 +10,7 @@ class MainWindow(Gtk.ApplicationWindow):
         self.set_application(application)
         self.set_title("Eldur")
         self.set_titlebar(HeaderBar())
+        self.set_default_size(500, 600)
 
         temp = Gtk.Label()
         temp.set_text("Content")
