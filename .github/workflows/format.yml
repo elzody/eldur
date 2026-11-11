@@ -1,0 +1,19 @@
+name: Code Formatting
+
+on: [pull_request]
+
+jobs:
+  python:
+    name: Python
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Install Nix
+        uses: cachix/install-nix-action@v31
+        with:
+          github_access_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Ruff format check
+        run: nix develop -c uv run ruff format --check
